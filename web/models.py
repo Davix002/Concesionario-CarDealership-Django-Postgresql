@@ -4,24 +4,25 @@ from django.db import models
 
 # Create your models here.
 class Car(models.Model):
-    picture = models.FileField(null=True)
-    brand = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
-    car_make = models.CharField(max_length=100, null=True)
-    price = models.IntegerField(null=True)
-    fuel = models.CharField(max_length=20, null=True)
-    dimensions = models.CharField(max_length=50, null=True)
-    transmission = models.CharField(max_length=100, null=True)
-    gears = models.IntegerField(null=True)
-    seats = models.IntegerField(null=True)
-    power = models.IntegerField(null=True)
-    tank_capacity = models.IntegerField(null=True)
-    engine_displacement = models.IntegerField(null=True)
-    added_by = models.ForeignKey(User, on_delete=None, null=True)
+    foto = models.FileField(null=True)
+    marca = models.CharField(max_length=100, null=True)
+    modelo = models.CharField(max_length=50, null=True)
+    anio = models.CharField(max_length=20,null=True)
+    combustible = models.CharField(max_length=20, null=True)
+    puertas = models.IntegerField(null=True)
+    transmision = models.CharField(max_length=100, null=True)
+    motor =models.FloatField(null=True)
+    potencia =models.CharField(max_length=50, null=True)
+    carroceria =models.CharField(max_length=50, null=True)
+    consumo = models.IntegerField(null=True)
+    estado = models.CharField(max_length=50, null=True)
+    kilometros =models.IntegerField(null=True)
+    pais =models.CharField(max_length=50, null=True)
     description = models.TextField()
+    precio = models.IntegerField(null=True)
 
     def __str__(self):
-        return self.brand + " " + self.name
+        return self.marca + " " + self.modelo
 
 
 class Order(models.Model):
