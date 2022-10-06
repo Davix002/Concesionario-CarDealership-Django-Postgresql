@@ -25,7 +25,7 @@ environ.Env.read_env()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = '$fx1qn!1132qrmvcha2-_r7ydik9$i4z0wu+^6#)1)aa)aq_t-'
-SECRET_KEY = env.str('SECRET_KEY')
+SECRET_KEY = '&el)yp@4ogk2-qy5jp$!%oy&py-2fvj(d2q=r7671g#+b^-$)p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG=True

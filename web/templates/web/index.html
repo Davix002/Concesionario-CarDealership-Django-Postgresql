@@ -7,30 +7,30 @@
 {% block menu %}
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#newArrival">Locations</a>
+            <a class="nav-link js-scroll-trigger" href="#newArrival">Lugar</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link js-scroll-trigger" href="#services">Servicios</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#cars">Catalogue</a>
+            <a class="nav-link js-scroll-trigger" href="#cars">Catálogo</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
         </li>
         {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:dashboard' %}">Welcome, {{ user.last_name }}</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:dashboard' %}">Bienvenido, {{ user.last_name }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:logout' %}">Logout</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:logout' %}">Salir</a>
             </li>
         {% else %}
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:login' %}">Login</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:login' %}">Iniciar sesión</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:register' %}">Register</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:register' %}">Registrarse</a>
             </li>
         {% endif %}
     </ul>
@@ -170,7 +170,7 @@
                 <div class="col-lg-4 mr-auto text-center">
                     <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
                     <p>
-                        <a href="mailto:info@drivezone.com">info@drivezone.com</a>
+                        <a href="mailto:info@CarSold.com">info@CarSold.com</a>
                     </p>
                 </div>
             </div>
