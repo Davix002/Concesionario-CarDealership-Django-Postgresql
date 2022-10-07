@@ -20,6 +20,7 @@ class Car(models.Model):
     pais =models.CharField(max_length=50, null=True)
     description = models.TextField()
     precio = models.IntegerField(null=True)
+    added_by = models.ForeignKey(User, on_delete=None, null=True)
 
     def __str__(self):
         return self.marca + " " + self.modelo
