@@ -167,10 +167,10 @@ header.masthead {
     padding-bottom: calc(10rem - 56px);
     background-image: url(../images/header.jpg);
     background-position: center center;
-    -webkit-background-size: contain;;
-    -moz-background-size: contain;;
-    -o-background-size: contain;;
-    background-size: contain;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 header.masthead hr {
@@ -296,7 +296,7 @@ header.masthead p {
 
 .btn-primary {
     background-color: #f05f40;
-    border-color: #f05f40
+    border-color: #f05f40;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
