@@ -178,11 +178,6 @@ def order_car(request, cid):
                                 e.__str__())
     return HttpResponseForbidden()
 
-
-def testdrive():
-    return HttpResponseForbidden()
-
-
 def dashboard(request):
     if not request.user.is_authenticated:
         return redirect('web:login')
