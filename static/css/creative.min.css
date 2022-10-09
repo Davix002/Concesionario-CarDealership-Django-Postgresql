@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-primary {
-    background-color: #f05f40 !important
+    background-color: #212529!important;
 }
 
 .bg-dark {
@@ -46,24 +46,30 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(5, 5, 5, 0.377);
 }
 
+#MainSub{
+    width:50%;
+    margin:auto;
+}
+
 section {
     padding: 8rem 0
 }
 
 .section-heading {
-    margin-top: 0
+    margin-top: 0;
+    color: #fff;
 }
 
 ::-moz-selection {
     color: #fff;
     background: #212529;
-    text-shadow: none
+    text-shadow: none;
 }
 
 ::selection {
     color: #fff;
     background: #212529;
-    text-shadow: none
+    text-shadow: none;
 }
 
 img::selection {
@@ -78,7 +84,7 @@ img::-moz-selection {
 
 #mainNav {
     border-bottom: 1px solid rgba(33, 37, 41, .1);
-    background-color: rgb(255, 0, 0);
+    background-color: #AAB7BF;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
@@ -182,9 +188,9 @@ header.masthead hr {
 
 header.masthead h1 {
     font-size: 2rem;
-    background-color: rgba(5, 5, 5, 0.1);
-    border-radius: 50px;
-    box-shadow: 0 0 20px 20px rgba(5, 5, 5, 0.1);
+    background-color: rgba(5, 5, 5, 0.2);
+    border-radius:77% 20% / 10%;
+    box-shadow: 0 0 20px 40px rgba(5, 5, 5, 0.2);
 }
 
 header.masthead p {
@@ -300,17 +306,17 @@ header.masthead p {
 }
 
 .btn-primary {
-    background-color: #f05f40;
-    border-color: #f05f40;
+    background-color: #212529;
+    border-color: #212529;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
     color: #fff;
-    background-color: #ee4b28 !important
+    background-color: #212529 !important
 }
 
 .btn-primary:active, .btn-primary:focus {
-    box-shadow: 0 0 0 .2rem rgba(240, 95, 64, .5) !important
+    box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .5) !important
 }
 
 #altNav .navbar-brand {
