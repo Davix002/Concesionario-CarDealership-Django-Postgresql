@@ -47,6 +47,11 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
+#MainSub{
+    width:50%;
+    margin:auto;
+}
+
 section {
     padding: 8rem 0
 }
@@ -78,8 +83,8 @@ img::-moz-selection {
 }
 /* ? */
 #mainNav {
-    border-bottom: 1px solid rgba(9, 255, 0, 0.1);
-    background-color: rgb(255, 0, 0);
+    border-bottom: 1px solid rgb(197, 159, 56);
+    background-color: rgb(0, 0, 0);
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
@@ -89,23 +94,23 @@ img::-moz-selection {
 #mainNav .navbar-brand {
     font-weight: 700;
     text-transform: uppercase;
-    color: #2819af9d;
+    color: #D4AF37;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif
 }
 /* ? */
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: #ff0000
+    color: #fff;
 }
 /* ? */
 #mainNav .navbar-nav > li.nav-item > a.nav-link, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
     font-size: .9rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: #000000
+    color: #fff;
 }
 /* ? */
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-    color: #0004ff8a
+    color: #D4AF37;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
@@ -115,6 +120,12 @@ img::-moz-selection {
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover {
     background-color: transparent
+}
+
+.navbar-toggler{
+    color:#D4AF37;
+    background-color: #D4AF37;
+    border-radius:5px;
 }
 
 @media (min-width: 992px) {
@@ -179,11 +190,14 @@ header.masthead {
 
 header.masthead hr {
     margin-top: 30px;
-    margin-bottom: 30px
+    margin-bottom: 30px;
 }
 
 header.masthead h1 {
-    font-size: 2rem
+    font-size: 2rem;
+    background-color: rgba(5, 5, 5, 0.2);
+    border-radius: 20px;
+    /* box-shadow: 0 0 20px 40px rgba(5, 5, 5, 0.2); */
 }
 
 header.masthead p {

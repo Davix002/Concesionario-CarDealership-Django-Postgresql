@@ -63,24 +63,24 @@
                         <div class="block">
                             <h6 class="text-uppercase">Carrocería</h6>
                             <div class="form-group mb-1">
-                                <input id="all" type="radio" name="make" checked class="radio-template" value="all">
+                                <input id="all" type="radio" name="tipo" checked class="radio-template" value="all">
                                 <label for="all">Todos</label>
                             </div>
                             <div class="form-group mb-1">
-                                <input id="hatchback" type="radio" name="make" class="radio-template" value="hatchback">
-                                <label for="hatchback">Hatchback</label>
+                                <input id="Ligero" type="radio" name="tipo" class="radio-template" value="Ligero">
+                                <label for="Ligero">Ligero</label>
                             </div>
                             <div class="form-group mb-1">
-                                <input id="sedan" type="radio" name="make" class="radio-template" value="sedan">
-                                <label for="sedan">Sedan</label>
+                                <input id="Pesado" type="radio" name="tipo" class="radio-template" value="Pesado">
+                                <label for="Pesado">Pesado</label>
                             </div>
                             <div class="form-group mb-1">
-                                <input id="suv" type="radio" name="make" class="radio-template" value="suv">
-                                <label for="suv">SUV</label>
+                                <input id="Especial" type="radio" name="tipo" class="radio-template" value="Especial">
+                                <label for="Especial">Especial</label>
                             </div>
                             <div class="form-group mb-1">
-                                <input id="muv" type="radio" name="make" class="radio-template" value="muv">
-                                <label for="muv">MUV</label>
+                                <input id="Agricola" type="radio" name="tipo" class="radio-template" value="Agricola">
+                                <label for="Agricola">Agrícola</label>
                             </div>
                         </div>
                         <div class="block">
@@ -132,7 +132,7 @@
 {% endblock %}
 {% block scripts %}
     <script>
-        var make = '';
+        var tipo = '';
         var filter = false;
         var q = false;
         var start = 0;
@@ -316,8 +316,6 @@
         }
 
         getGrid(0,9);
-
-        // Hatchback selector
 
         function getGridwparams(params, start, end) {
             var xhttp = XMLReq(fillGrid);

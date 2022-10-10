@@ -81,8 +81,8 @@ img::-moz-selection {
 }
 
 #mainNav {
-    border-bottom: 1px solid rgba(33, 37, 41, .1);
-    background-color: #AAB7BF;
+    border-bottom: 1px solid rgb(197, 159, 56);
+    background-color: rgb(0, 0, 0);
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
@@ -92,32 +92,38 @@ img::-moz-selection {
 #mainNav .navbar-brand {
     font-weight: 700;
     text-transform: uppercase;
-    color: #1d20c9;
+    color: #D4AF37;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif
 }
 
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: #ff0000
+    color: #fff;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
     font-size: .9rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: #212529
+    color: #fff;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-    color: #f05f40
+    color: #D4AF37;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
-    color: #f05f40 !important;
+    color: #D4AF37 !important;
     background-color: transparent
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover {
     background-color: transparent
+}
+
+.navbar-toggler{
+    color:#D4AF37;
+    background-color: #D4AF37;
+    border-radius:5px;
 }
 
 @media (min-width: 992px) {
@@ -187,8 +193,8 @@ header.masthead hr {
 header.masthead h1 {
     font-size: 2rem;
     background-color: rgba(5, 5, 5, 0.2);
-    border-radius:77% 20% / 10%;
-    box-shadow: 0 0 20px 40px rgba(5, 5, 5, 0.2);
+    border-radius: 20px;
+    /* box-shadow: 0 0 20px 40px rgba(5, 5, 5, 0.2); */
 }
 
 header.masthead p {

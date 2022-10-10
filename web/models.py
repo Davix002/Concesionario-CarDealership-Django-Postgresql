@@ -13,7 +13,7 @@ class Car(models.Model):
     transmision = models.CharField(max_length=50, null=True)
     motor =models.FloatField(null=True)
     potencia =models.CharField(max_length=50, null=True)
-    carroceria =models.CharField(max_length=50, null=True)
+    tipo =models.CharField(max_length=50, null=True)
     consumo = models.FloatField(null=True)
     estado = models.CharField(max_length=50, null=True)
     kilometros =models.IntegerField(null=True)
