@@ -42,7 +42,7 @@
                 {% for test in tests %}
                     <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
                         <div class="card h-100">
-                            <a href="{% url 'web:details' test.car.id %}"><img class="card-img-top" src="{{ test.car.picture.url }}" alt=""></a>
+                            <a href="{% url 'web:details' test.car.id %}"><img class="card-img-top" src="{{ test.car.foto.url }}" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="{% url 'web:details' test.car.id %}">{{ test.car.marca }} {{ test.car.modelo }}</a>
@@ -71,7 +71,7 @@
                 {% for order in orders %}
                     <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
                         <div class="card h-100">
-                            <a href="{% url 'web:details' order.car.id %}"><img class="card-img-top" src="{{ order.car.picture.url }}" alt=""></a>
+                            <a href="{% url 'web:details' order.car.id %}"><img class="card-img-top" src="{{ order.car.foto.url }}" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="{% url 'web:details' order.car.id %}">{{ order.car.marca }} {{ order.car.modelo }}</a>

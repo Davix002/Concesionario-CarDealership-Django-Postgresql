@@ -166,7 +166,7 @@ class AdminCarTest(TestCase):
         print("\nAdd car test...")
         user = self.user
         car = Car(
-            picture=File(open(settings.BASE_DIR + '/web' + settings.STATIC_URL + 'images/car.jpg', 'r')),
+            foto=File(open(settings.BASE_DIR + '/web' + settings.STATIC_URL + 'images/car.jpg', 'r')),
             marca='Brand',
             modelo='Name',
             carroceria='hatchback',
@@ -198,7 +198,7 @@ class OrderTest(StaticLiveServerTestCase):
         super(OrderTest, self).setUp()
         # Create a car so that a view will be available
         car = Car.objects.create(
-            picture=File(open(settings.BASE_DIR + '/media/car.jpg', 'rb')),
+            foto=File(open(settings.BASE_DIR + '/media/car.jpg', 'rb')),
             marca='Brand',
             modelo='Name',
             carroceria='hatchback',

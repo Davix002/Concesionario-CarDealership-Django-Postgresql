@@ -207,7 +207,7 @@ def compare(request):
         data = {
             'car1_id': car1.id,
             'car1_name': car1.marca + " " + car1.modelo,
-            'car1_pic': car1.foto.url,
+            'car1_foto': car1.foto.url,
             'car1_precio': car1.precio,
             'car1_puertas': car1.puertas,
             'car1_consumo': car1.consumo,
@@ -216,7 +216,7 @@ def compare(request):
             'car1_potencia': car1.potencia,
             'car2_id': car2.id,
             'car2_name': car2.marca + " " + car2.modelo,
-            'car2_pic': car2.foto.url,
+            'car2_foto': car2.foto.url,
             'car2_precio': car2.precio,
             'car2_puertas': car2.puertas,
             'car2_consumo': car2.consumo,
@@ -242,10 +242,10 @@ def compare(request):
                 <td>
                 </td>
                 <td>
-                    <img class="img-fluid" src="{car1_pic}" alt="">
+                    <img class="img-fluid" src="{car1_foto}" alt="">
                 </td>
                 <td>
-                    <img class="img-fluid" src="{car2_pic}" alt="">
+                    <img class="img-fluid" src="{car2_foto}" alt="">
                 </td>
             </tr>
             <tr>
