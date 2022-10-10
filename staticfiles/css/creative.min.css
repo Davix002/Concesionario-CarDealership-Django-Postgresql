@@ -44,9 +44,13 @@ h1, h2, h3, h4, h5, h6 {
     color: rgb(0, 255, 13)
 }
 
-#MainSub{
+#subtitulo{
     width:50%;
     margin:auto;
+}
+
+#segundoTitulo{
+    color:#fff;
 }
 
 section {

@@ -98,8 +98,6 @@ def car_search(request):
 
 def cars(request):
     if request.method == 'GET':
-        print('entro aquí')
-        print(request.GET.get('tipo'))
         if request.GET.get('start'):
             start = int(request.GET.get('start'))
         else:
@@ -131,7 +129,7 @@ def cars(request):
 
         if len(combustible) > 1:
             objs = Car.objects.filter(
-                Q(marca__icontains=tipo) &
+                Q(tipo__icontains=tipo) &
                 Q(precio__gte=cost_min) &
                 Q(precio__lte=cost_max) &
                 (Q(combustible__icontains=combustible[0]) | Q(combustible__icontains=combustible[1]))
@@ -139,7 +137,7 @@ def cars(request):
 
         else:
             objs = Car.objects.filter(
-                marca__icontains=tipo,
+                tipo__icontains=tipo,
                 precio__gte=cost_min,
                 precio__lte=cost_max,
                 combustible__icontains=combustible[0]
