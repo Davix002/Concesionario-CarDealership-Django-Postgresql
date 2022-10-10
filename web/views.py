@@ -205,24 +205,22 @@ def compare(request):
         data = {
             'car1_id': car1.id,
             'car1_name': car1.marca + " " + car1.modelo,
-            'car1_pic': car1.picture.url,
+            'car1_pic': car1.foto.url,
             'car1_precio': car1.precio,
-            'car1_seats': car1.seats,
-            'car1_tank_capacity': car1.tank_capacity,
-            'car1_transmission': car1.transmission,
-            'car1_gears': car1.gears,
-            'car1_engine_displacement': car1.engine_displacement,
-            'car1_power': car1.power,
+            'car1_puertas': car1.puertas,
+            'car1_consumo': car1.consumo,
+            'car1_transmision': car1.transmision,
+            'car1_motor': car1.motor,
+            'car1_potencia': car1.potencia,
             'car2_id': car2.id,
             'car2_name': car2.marca + " " + car2.modelo,
-            'car2_pic': car2.picture.url,
+            'car2_pic': car2.foto.url,
             'car2_precio': car2.precio,
-            'car2_seats': car2.seats,
-            'car2_tank_capacity': car2.tank_capacity,
-            'car2_transmission': car2.transmission,
-            'car2_gears': car2.gears,
-            'car2_engine_displacement': car2.engine_displacement,
-            'car2_power': car2.power,
+            'car2_puertas': car2.puertas,
+            'car2_consumo': car2.consumo,
+            'car2_transmision': car2.transmision,
+            'car2_motor': car2.motor,
+            'car2_potencia': car2.potencia,
         }
 
         html = '''
@@ -261,68 +259,57 @@ def compare(request):
             </tr>
             <tr>
                 <td>
-                    Seating capacity
+                    Número de puertas
                 </td>
                 <td>
-                    {car1_seats}
+                    {car1_puertas}
                 </td>
                 <td>
-                    {car2_seats}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Capacidad del tanque de combustible (litres)
-                </td>
-                <td>
-                    {car1_tank_capacity}
-                </td>
-                <td>
-                    {car2_tank_capacity}
+                    {car2_puertas}
                 </td>
             </tr>
             <tr>
                 <td>
-                    Transmission type
+                    Consumo
                 </td>
                 <td>
-                    {car1_transmission}
+                    {car1_consumo}
                 </td>
                 <td>
-                    {car2_transmission}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Gears
-                </td>
-                <td>
-                    {car1_gears}
-                </td>
-                <td>
-                    {car2_gears}
+                    {car2_consumo}
                 </td>
             </tr>
             <tr>
                 <td>
-                    Engine displacement (cc)
+                    Tipo de transmisión
                 </td>
                 <td>
-                    {car1_engine_displacement}
+                    {car1_transmision}
                 </td>
                 <td>
-                    {car2_engine_displacement}
+                    {car2_transmision}
                 </td>
             </tr>
             <tr>
                 <td>
-                    Maximum power (PS)
+                    Motor (cc)
                 </td>
                 <td>
-                    {car1_power}
+                    {car1_motor}
                 </td>
                 <td>
-                    {car2_power}
+                    {car2_motor}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Potencia máxima (PS)
+                </td>
+                <td>
+                    {car1_potencia}
+                </td>
+                <td>
+                    {car2_potencia}
                 </td>
             </tr>
             </tbody>

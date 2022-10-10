@@ -44,7 +44,7 @@
                     <div class="card-body">
                         <h3 class="card-title">{{ car.modelo }}</h3>
                         <h4>$ {{ car.precio }}</h4>
-                        <p class="card-text">{{ car.description }}</p>
+                        <p class="card-text">{{ car.descripcion }}</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#order" id="orderBtn">
                             Order now
                         </button>
@@ -77,50 +77,42 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Seating capacity
+                                    Número de puertas
                                 </td>
                                 <td>
-                                    {{ car.seats }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Capacidad del tanque de combustible (litres)
-                                </td>
-                                <td>
-                                    {{ car.tank_capacity }}
+                                    {{ car.puertas }}
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Transmission type
+                                    Consumo
                                 </td>
                                 <td>
-                                    {{ car.transmission }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Gears
-                                </td>
-                                <td>
-                                    {{ car.gears }}
+                                    {{ car.consumo }}
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Engine displacement (cc)
+                                    Tipo de transmisión
                                 </td>
                                 <td>
-                                    {{ car.engine_displacement }}
+                                    {{ car.transmision }}
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Maximum power (PS)
+                                    Motor (cc)
                                 </td>
                                 <td>
-                                    {{ car.power }}
+                                    {{ car.motor }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Potencia máxima (PS)
+                                </td>
+                                <td>
+                                    {{ car.potencia }}
                                 </td>
                             </tr>
                             </tbody>

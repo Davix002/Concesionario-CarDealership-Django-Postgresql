@@ -172,14 +172,13 @@ class AdminCarTest(TestCase):
             carroceria='hatchback',
             precio='65000',
             combustible='petrol',
-            transmission='Automatic',
-            gears=5,
-            seats=5,
-            power=100,
-            tank_capacity=100,
-            engine_displacement=2000,
-            added_by=user,
-            description='Test car'
+            transmision='Automatic',
+            puertas=4,
+            potencia=100,
+            consumo=100,
+            motor=2000,
+            anadido_por=user,
+            descripcion='Test car'
         )
 
         self.assertEqual(car.__str__(), "Brand Name")
@@ -205,14 +204,13 @@ class OrderTest(StaticLiveServerTestCase):
             carroceria='hatchback',
             precio='65000',
             combustible='petrol',
-            transmission='Automatic',
-            gears=5,
-            seats=5,
-            power=100,
-            tank_capacity=100,
-            engine_displacement=2000,
-            added_by=self.su,
-            description='Test car',
+            transmision='Automatic',
+            puertas=4,
+            potencia=100,
+            consumo=100,
+            motor=2000,
+            anadido_por=self.su,
+            descripcion='Test car',
         )
 
         self.pk = car.id

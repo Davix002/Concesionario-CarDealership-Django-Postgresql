@@ -18,7 +18,7 @@ class Car(models.Model):
     estado = models.CharField(max_length=50, null=True)
     kilometros =models.IntegerField(null=True)
     pais =models.CharField(max_length=50, null=True)
-    description = models.TextField()
+    descripcion = models.TextField()
     precio = models.IntegerField(null=True)
     anadido_por = models.ForeignKey(User, on_delete=None, null=True)
 
