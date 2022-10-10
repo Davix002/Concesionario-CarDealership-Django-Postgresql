@@ -90,7 +90,7 @@ def car_search(request):
             end = 9
 
         objs = Car.objects.filter(
-            Q(marca__icontains=search) | Q(name__icontains=search)
+            Q(marca__icontains=search) | Q(modelo__icontains=search)
         )[start:end]
         data = serializers.serialize('json', objs)
         return HttpResponse(data)
@@ -120,25 +120,25 @@ def cars(request):
             cost_max = int(float(request.GET.get('cost_max')))
         else:
             cost_max = 999999999
-        if request.GET.get('fuel'):
-            fuel = request.GET.getlist('fuel')
+        if request.GET.get('combustible'):
+            combustible = request.GET.getlist('combustible')
         else:
-            fuel = ['petrol', 'diesel']
+            combustible = ['petrol', 'diesel']
 
-        if len(fuel) > 1:
+        if len(combustible) > 1:
             objs = Car.objects.filter(
-                Q(car_make__icontains=make) &
-                Q(price__gte=cost_min) &
-                Q(price__lte=cost_max) &
-                (Q(fuel__icontains=fuel[0]) | Q(fuel__icontains=fuel[1]))
+                Q(marca__icontains=make) &
+                Q(precio__gte=cost_min) &
+                Q(precio__lte=cost_max) &
+                (Q(combustible__icontains=combustible[0]) | Q(combustible__icontains=combustible[1]))
             )[start:end]
 
         else:
             objs = Car.objects.filter(
-                car_make__icontains=make,
-                price__gte=cost_min,
-                price__lte=cost_max,
-                fuel__icontains=fuel[0]
+                marca__icontains=make,
+                precio__gte=cost_min,
+                precio__lte=cost_max,
+                combustible__icontains=combustible[0]
             )[start:end]
 
     else:
@@ -168,7 +168,7 @@ def order_car(request, cid):
             new = Order(
                 user=user,
                 car=car,
-                amount=car.price,
+                amount=car.precio,
                 address=address
             ).save()
 
@@ -204,27 +204,25 @@ def compare(request):
 
         data = {
             'car1_id': car1.id,
-            'car1_name': car1.marca + " " + car1.name,
+            'car1_name': car1.marca + " " + car1.modelo,
             'car1_pic': car1.picture.url,
-            'car1_price': car1.price,
+            'car1_precio': car1.precio,
             'car1_seats': car1.seats,
             'car1_tank_capacity': car1.tank_capacity,
             'car1_transmission': car1.transmission,
             'car1_gears': car1.gears,
             'car1_engine_displacement': car1.engine_displacement,
             'car1_power': car1.power,
-            'car1_dimensions': car1.dimensions,
             'car2_id': car2.id,
-            'car2_name': car2.marca + " " + car2.name,
+            'car2_name': car2.marca + " " + car2.modelo,
             'car2_pic': car2.picture.url,
-            'car2_price': car2.price,
+            'car2_precio': car2.precio,
             'car2_seats': car2.seats,
             'car2_tank_capacity': car2.tank_capacity,
             'car2_transmission': car2.transmission,
             'car2_gears': car2.gears,
             'car2_engine_displacement': car2.engine_displacement,
             'car2_power': car2.power,
-            'car2_dimensions': car2.dimensions,
         }
 
         html = '''
@@ -252,13 +250,13 @@ def compare(request):
             </tr>
             <tr>
                 <td>
-                    Price (in $)
+                    Precio (in $)
                 </td>
                 <td>
-                    {car1_price}
+                    {car1_precio}
                 </td>
                 <td>
-                    {car2_price}
+                    {car2_precio}
                 </td>
             </tr>
             <tr>
@@ -274,7 +272,7 @@ def compare(request):
             </tr>
             <tr>
                 <td>
-                    Fuel Tank Capacity (litres)
+                    Capacidad del tanque de combustible (litres)
                 </td>
                 <td>
                     {car1_tank_capacity}
@@ -325,17 +323,6 @@ def compare(request):
                 </td>
                 <td>
                     {car2_power}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Dimensions (mm)
-                </td>
-                <td>
-                    {car1_dimensions}
-                </td>
-                <td>
-                    {car2_dimensions}
                 </td>
             </tr>
             </tbody>

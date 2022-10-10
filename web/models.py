@@ -36,4 +36,4 @@ class Order(models.Model):
     is_delivered = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.first_name + ' ' + self.user.last_name + ' - ' + self.car.name
+        return self.user.first_name + ' ' + self.user.last_name + ' - ' + self.car.modelo

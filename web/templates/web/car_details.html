@@ -1,7 +1,7 @@
 {% extends 'web/base_alt.html' %}
 
 {% load staticfiles %}
-{% block title %}{{ car.marca }} {{ car.name }}{% endblock %}
+{% block title %}{{ car.marca }} {{ car.modelo }}{% endblock %}
 
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/css_style.default.css' %}" id="theme-stylesheet">
@@ -42,8 +42,8 @@
                 <div class="card mt-4">
                     <img class="card-img-top img-fluid" src="{{ car.picture.url }}" alt="">
                     <div class="card-body">
-                        <h3 class="card-title">{{ car.name }}</h3>
-                        <h4>$ {{ car.price }}</h4>
+                        <h3 class="card-title">{{ car.modelo }}</h3>
+                        <h4>$ {{ car.precio }}</h4>
                         <p class="card-text">{{ car.description }}</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#order" id="orderBtn">
                             Order now
@@ -64,15 +64,15 @@
                                     Car type
                                 </td>
                                 <td>
-                                    {{ car.car_make }}
+                                    {{ car.marca }}
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Fuel Type
+                                    Tipo de combustible
                                 </td>
                                 <td>
-                                    {{ car.fuel }}
+                                    {{ car.combustible }}
                                 </td>
                             </tr>
                             <tr>
@@ -85,7 +85,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Fuel Tank Capacity (litres)
+                                    Capacidad del tanque de combustible (litres)
                                 </td>
                                 <td>
                                     {{ car.tank_capacity }}
@@ -121,14 +121,6 @@
                                 </td>
                                 <td>
                                     {{ car.power }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Dimensions (mm)
-                                </td>
-                                <td>
-                                    {{ car.dimensions }}
                                 </td>
                             </tr>
                             </tbody>

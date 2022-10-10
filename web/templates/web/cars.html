@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="block">
-                            <h6 class="text-uppercase">Fuel Type </h6>
+                            <h6 class="text-uppercase">Tipo de combustible </h6>
                             <div class="form-group mb-1">
                                 <input id="petrol" type="checkbox" name="fuel" checked
                                        class="checkbox-template" value="petrol">
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         <div class="block">
-                            <h6 class="text-uppercase">Filter By Price </h6>
+                            <h6 class="text-uppercase">Filtrar por precio </h6>
                             <div id="slider-snap"></div>
                             <div class="value d-flex justify-content-between">
                                 <div class="min">From $ <span id="slider-snap-value-lower" class="example-val"></span></div>
@@ -263,9 +263,9 @@
                         var ob = parsed[obj];
                         var pk = ob['pk'];
                         var fields = ob['fields'];
-                        var name = fields['name'];
+                        var modelo = fields['modelo'];
                         var marca = fields['marca'];
-                        var price = fields['price'];
+                        var precio = fields['precio'];
                         var pic = fields['picture'];
 
                         // Now add the table. :)
@@ -285,9 +285,9 @@
                                 '<div class="title">' +
                                     '<small class="text-muted">' + marca + '</small>' +
                                         '<a href="' + local + '/car/' + pk + '">' +
-                                            '<h3 class="h6 text-uppercase no-margin-bottom">' + name + '</h3>' +
+                                            '<h3 class="h6 text-uppercase no-margin-bottom">' + modelo + '</h3>' +
                                         '</a>' +
-                                        '<span class="price text-muted">$ ' + price + '</span>' +
+                                        '<span class="price text-muted">$ ' + precio + '</span>' +
                                 '</div>' +
                             '</div>' +
                             '</div>';
