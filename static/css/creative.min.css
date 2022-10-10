@@ -16,16 +16,16 @@ hr {
 hr.light {
     border-color: rgb(10, 10, 10)
 }
-/*letra del correo*/
+/*fondo letra del correo*/
 a {
-    color: #1900ffd5;
+    color: #131313;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
     transition: all .2s
 }
-/*letra secundaria del correo*/
+/*fondo secundario del correo*/
 a:hover {
-    color: #ff0000
+    color: #86868B
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,17 +33,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* color principal cubre imagenes */
 .bg-primary {
-    background-color: #0b0edabe !important
+    background-color: #131313 !important
 }
 /* color principal para la vista de vehiculops */
 .bg-dark {
-    background-color: #0b0edabe !important
+    background-color: #131313 !important
 }
 /* texto de subtitulos */
 .text-faded {
     text-align: center;
     color: rgb(255, 255, 255);
     background-color: rgba(5, 5, 5, 0.377);
+    
 }
 
 section {
@@ -75,40 +76,40 @@ img::-moz-selection {
     color: #fff;
     background: 0 0
 }
-
+/* ? */
 #mainNav {
-    border-bottom: 1px solid rgba(33, 37, 41, .1);
+    border-bottom: 1px solid rgba(9, 255, 0, 0.1);
     background-color: rgb(255, 0, 0);
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
     transition: all .2s
 }
-
+/* ? */
 #mainNav .navbar-brand {
     font-weight: 700;
     text-transform: uppercase;
     color: #2819af9d;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif
 }
-
+/* ? */
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
     color: #ff0000
 }
-
+/* ? */
 #mainNav .navbar-nav > li.nav-item > a.nav-link, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
     font-size: .9rem;
     font-weight: 700;
     text-transform: uppercase;
     color: #000000
 }
-
+/* ? */
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-    color: #1114e6a8
+    color: #0004ff8a
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
-    color: #af2929b2 !important;
+    color: #D4AF37 !important;
     background-color: transparent
 }
 
@@ -121,11 +122,12 @@ img::-moz-selection {
         border-color: transparent;
         background-color: transparent
     }
-
+/* nombre principal de la Pag */
     #mainNav .navbar-brand {
-        color: rgba(255, 255, 255, .7)
+        color: #D4AF37
+        
     }
-
+/* ? */
     #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
         color: #fff
     }
@@ -133,34 +135,34 @@ img::-moz-selection {
     #mainNav .navbar-nav > li.nav-item > a.nav-link {
         padding: .5rem 1rem
     }
-
+/* titulos secundarios de la cabeza de pagina */
     #mainNav .navbar-nav > li.nav-item > a.nav-link, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-        color: rgba(255, 255, 255, .7)
+        color: #86868B
     }
-
+/* titulos secundarios de la cabeza de pagina cambiante al pasar mouse*/
     #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-        color: #fff
+        color: #D4AF37
     }
-
+/* barra de menu principal */
     #mainNav.navbar-shrink {
-        border-bottom: 1px solid rgba(33, 37, 41, .1);
-        background-color: #fff
+        border-bottom: 1px solid rgb(197, 159, 56);
+        background-color: rgb(0, 0, 0)
     }
-
+/* color nombre pag al deslizar abajo */
     #mainNav.navbar-shrink .navbar-brand {
-        color: #f05f40
+        color: #D4AF37
     }
-
+/* color nombre pag al deslizar abajo 2 */
     #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
-        color: #f05f40
+        color: #ffffff
     }
-
+/* botones de navegacion superiores*/
     #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
-        color: #212529
+        color: #ffffff
     }
 
     #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover {
-        color: #f05f40
+        color: #D4AF37
     }
 }
 
@@ -223,7 +225,7 @@ header.masthead p {
     max-width: 650px;
     margin: 0 auto
 }
-
+/* ? */
 .portfolio-box .portfolio-box-caption {
     position: absolute;
     bottom: 0;
@@ -281,7 +283,7 @@ header.masthead p {
 }
 
 .text-primary {
-    color: #f05f40 !important
+    color: #D4AF37 !important
 }
 
 .btn {
@@ -295,24 +297,24 @@ header.masthead p {
 .btn-xl {
     padding: 1rem 2rem
 }
-
+/* boton principal para ver vehiculos*/
 .btn-primary {
-    background-color: #1900ff80;
-    border-color: #f8050591
+    background-color: #00000080;
+    border-color: #D4AF37
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
     color: #fff;
-    background-color: #ff0505b0 !important
+    background-color: #d4af37a4 !important
 }
 
 .btn-primary:active, .btn-primary:focus {
-    box-shadow: 0 0 0 .2rem rgba(240, 95, 64, .5) !important
+    box-shadow: 0 0 0 .2rem rgba(209, 156, 41, 0.863) !important
 }
-
+/* nombre (boton principal) de pagina al buscar vehiculos y regresar al menu principal*/
 #altNav .navbar-brand {
     font-weight: 700;
     text-transform: uppercase;
-    color: #ff0000;
+    color: #D4AF37;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif
 }

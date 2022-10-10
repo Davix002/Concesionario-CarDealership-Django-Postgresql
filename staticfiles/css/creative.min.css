@@ -10,22 +10,22 @@ body {
 hr {
     max-width: 50px;
     border-width: 3px;
-    border-color: #f05f40
+    border-color: #D4AF37
 }
 
 hr.light {
-    border-color: #fff
+    border-color: rgb(255, 255, 255)
 }
 
 a {
-    color: #f05f40;
+    color: #D4AF37;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
     transition: all .2s
 }
 
 a:hover {
-    color: #f05f40
+    color: #000000
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,15 +33,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-primary {
-    background-color: #212529 !important;
+    background-color: #ffffff !important;
 }
 
 .bg-dark {
-    background-color: #212529 !important
+    background-color: #ffffff !important
 }
 
 .text-faded {
-    color: rgba(255, 255, 255, .7)
+    color: rgb(0, 255, 13)
 }
 
 #MainSub{

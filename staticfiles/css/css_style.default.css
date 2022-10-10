@@ -23,7 +23,7 @@ section header {
 
 h2 small {
     display: block;
-    color: #999;
+    color: rgb(0, 255, 21);
     font-size: 0.65em;
     font-weight: 300;
     font-family: "Poppins", sans-serif
