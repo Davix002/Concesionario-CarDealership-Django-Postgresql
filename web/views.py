@@ -90,7 +90,7 @@ def car_search(request):
             end = 9
 
         objs = Car.objects.filter(
-            Q(brand__icontains=search) | Q(name__icontains=search)
+            Q(marca__icontains=search) | Q(name__icontains=search)
         )[start:end]
         data = serializers.serialize('json', objs)
         return HttpResponse(data)
@@ -204,7 +204,7 @@ def compare(request):
 
         data = {
             'car1_id': car1.id,
-            'car1_name': car1.brand + " " + car1.name,
+            'car1_name': car1.marca + " " + car1.name,
             'car1_pic': car1.picture.url,
             'car1_price': car1.price,
             'car1_seats': car1.seats,
@@ -215,7 +215,7 @@ def compare(request):
             'car1_power': car1.power,
             'car1_dimensions': car1.dimensions,
             'car2_id': car2.id,
-            'car2_name': car2.brand + " " + car2.name,
+            'car2_name': car2.marca + " " + car2.name,
             'car2_pic': car2.picture.url,
             'car2_price': car2.price,
             'car2_seats': car2.seats,
