@@ -12,26 +12,26 @@
         <li class="nav-item">
             <form class="form-inline my-2 my-lg-0" id="searchbar">
                 <input class="form-control ml-sm-2" type="text" name="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Buscar</button>
             </form>
         </li>
         &nbsp;&nbsp;
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{% url 'web:compare' %}">Compare</a>
+            <a class="nav-link js-scroll-trigger" href="{% url 'web:compare' %}">Comparar</a>
         </li>
         {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:dashboard' %}">Welcome, {{ user.last_name }}</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:dashboard' %}">Bienvenido, {{ user.last_name }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:logout' %}">Logout</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:logout' %}">Salir</a>
             </li>
         {% else %}
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:login' %}">Login</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:login' %}">Ingresar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:register' %}">Register</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:register' %}">Registrarse</a>
             </li>
         {% endif %}
     </ul>
@@ -42,13 +42,13 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-lg-9 order-2 order-lg-1">
-                    <h1>Cars</h1>
-                    <p class="lead text-muted">All the available cars in the showroom</p>
+                    <h1>Vehículos</h1>
+                    <p class="lead text-muted">Todos los vehículos disponibles</p>
                 </div>
                 <div class="col-lg-3 text-right order-1 order-lg-2">
                     <ul class="breadcrumb justify-content-lg-end">
-                        <li class="breadcrumb-item"><a href="{% url 'web:index' %}">Home</a></li>
-                        <li class="breadcrumb-item active">cars</li>
+                        <li class="breadcrumb-item"><a href="{% url 'web:index' %}">Inicio</a></li>
+                        <li class="breadcrumb-item active">vehículo</li>
                     </ul>
                 </div>
             </div>
@@ -61,10 +61,10 @@
                 <div class="sidebar col-xl-3 col-lg-4 sidebar">
                     <form action="#" id="filter">
                         <div class="block">
-                            <h6 class="text-uppercase">Car build </h6>
+                            <h6 class="text-uppercase">Carrocería</h6>
                             <div class="form-group mb-1">
                                 <input id="all" type="radio" name="make" checked class="radio-template" value="all">
-                                <label for="all">All</label>
+                                <label for="all">Todos</label>
                             </div>
                             <div class="form-group mb-1">
                                 <input id="hatchback" type="radio" name="make" class="radio-template" value="hatchback">
@@ -88,7 +88,7 @@
                             <div class="form-group mb-1">
                                 <input id="petrol" type="checkbox" name="fuel" checked
                                        class="checkbox-template" value="petrol">
-                                <label for="petrol">Petrol</label>
+                                <label for="petrol">Gasolina</label>
                             </div>
                             <div class="form-group mb-1">
                                 <input id="diesel" type="checkbox" name="fuel" checked
@@ -104,7 +104,7 @@
                                 <div class="max">&nbsp; Hasta $ <span id="slider-snap-value-upper" class="example-val"></span></div>
                             </div>
                         </div>
-                            <a href="#" class="filter-submit" onclick="getparams(0,9);">filter</a>
+                            <a href="#" class="filter-submit" onclick="getparams(0,9);">filtrar</a>
                     </form>
                 </div>
                 <!-- /Sidebar end-->
@@ -119,9 +119,9 @@
                     <nav aria-label="page navigation example" class="d-flex justify-content-center">
                         <ul class="pagination pagination-custom">
                             <li class="page-item" id="prev" onclick="previous()"><a href="#" aria-label="Previous" class="page-link"><span
-                                    aria-hidden="true">Prev</span><span class="sr-only">Anterior</span></a></li>
+                                    aria-hidden="true">Anterior</span><span class="sr-only">Anterior</span></a></li>
                             <li class="page-item" id="next" onclick="next()"><a href="#" aria-label="Next" class="page-link"><span
-                                    aria-hidden="true">Next</span><span class="sr-only">Siguiente     </span></a></li>
+                                    aria-hidden="true">Siguiente</span><span class="sr-only">Siguiente     </span></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -255,7 +255,7 @@
             else {
 
                 if (parsed.length === 0) {
-                    var markup = '<p id=error>Uh oh! No cars with matching queries found!</p><br>';
+                    var markup = '<p id=error>¡Uh oh! No se han encontrado coches con criterios similares!</p><br>';
                     $('.grid').append(markup);
                 }
                 else {

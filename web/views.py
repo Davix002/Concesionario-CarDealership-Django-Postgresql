@@ -106,12 +106,14 @@ def cars(request):
             end = int(request.GET.get('end'))
         else:
             end = 9
+            
         if request.GET.get('make'):
             make = request.GET.get('make')
             if make == 'all':
                 make = ''
         else:
             make = ''
+
         if request.GET.get('cost_min'):
             cost_min = int(float(request.GET.get('cost_min')))
         else:
@@ -123,7 +125,7 @@ def cars(request):
         if request.GET.get('combustible'):
             combustible = request.GET.getlist('combustible')
         else:
-            combustible = ['petrol', 'diesel']
+            combustible = ['Gasolina', 'Diesel']
 
         if len(combustible) > 1:
             objs = Car.objects.filter(

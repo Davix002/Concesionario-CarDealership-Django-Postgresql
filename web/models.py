@@ -5,21 +5,21 @@ from django.db import models
 # Create your models here.
 class Car(models.Model):
     foto = models.FileField(null=True)
-    marca = models.CharField(max_length=100, null=True)
+    marca = models.CharField(max_length=50, null=True)
     modelo = models.CharField(max_length=50, null=True)
-    anio = models.CharField(max_length=20,null=True)
-    combustible = models.CharField(max_length=20, null=True)
+    anio = models.CharField(max_length=50,null=True)
+    combustible = models.CharField(max_length=50, null=True)
     puertas = models.IntegerField(null=True)
-    transmision = models.CharField(max_length=100, null=True)
+    transmision = models.CharField(max_length=50, null=True)
     motor =models.FloatField(null=True)
     potencia =models.CharField(max_length=50, null=True)
     carroceria =models.CharField(max_length=50, null=True)
-    consumo = models.IntegerField(null=True)
+    consumo = models.FloatField(null=True)
     estado = models.CharField(max_length=50, null=True)
     kilometros =models.IntegerField(null=True)
     pais =models.CharField(max_length=50, null=True)
     descripcion = models.TextField()
-    precio = models.IntegerField(null=True)
+    precio = models.FloatField(null=True)
     anadido_por = models.ForeignKey(User, on_delete=None, null=True)
 
     def __str__(self):
