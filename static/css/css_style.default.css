@@ -58,7 +58,7 @@ button {
 
 .form-control {
     padding: 12px 20px;
-    border: 1px solid rgb(255, 0, 0);
+    border: 1px solid #ddd;
     background: none;
     border-radius: 30px;
     outline: none;
