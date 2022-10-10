@@ -1,7 +1,7 @@
 {% extends 'web/base_alt.html' %}
 
 {% load staticfiles %}
-{% block title %}{{ car.brand }} {{ car.name }}{% endblock %}
+{% block title %}{{ car.marca }} {{ car.name }}{% endblock %}
 
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/css_style.default.css' %}" id="theme-stylesheet">
@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
-                <h3 class="my-4">{{ car.brand }}</h3>
+                <h3 class="my-4">{{ car.marca }}</h3>
             </div>
             <!-- /.col-lg-3 -->
 
