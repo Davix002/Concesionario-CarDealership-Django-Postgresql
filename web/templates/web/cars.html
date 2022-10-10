@@ -100,8 +100,8 @@
                             <h6 class="text-uppercase">Filtrar por precio </h6>
                             <div id="slider-snap"></div>
                             <div class="value d-flex justify-content-between">
-                                <div class="min">From $ <span id="slider-snap-value-lower" class="example-val"></span></div>
-                                <div class="max">&nbsp; To $ <span id="slider-snap-value-upper" class="example-val"></span></div>
+                                <div class="min">Desde $ <span id="slider-snap-value-lower" class="example-val"></span></div>
+                                <div class="max">&nbsp; Hasta $ <span id="slider-snap-value-upper" class="example-val"></span></div>
                             </div>
                         </div>
                             <a href="#" class="filter-submit" onclick="getparams(0,9);">filter</a>
@@ -119,9 +119,9 @@
                     <nav aria-label="page navigation example" class="d-flex justify-content-center">
                         <ul class="pagination pagination-custom">
                             <li class="page-item" id="prev" onclick="previous()"><a href="#" aria-label="Previous" class="page-link"><span
-                                    aria-hidden="true">Prev</span><span class="sr-only">Previous</span></a></li>
+                                    aria-hidden="true">Prev</span><span class="sr-only">Anterior</span></a></li>
                             <li class="page-item" id="next" onclick="next()"><a href="#" aria-label="Next" class="page-link"><span
-                                    aria-hidden="true">Next</span><span class="sr-only">Next     </span></a></li>
+                                    aria-hidden="true">Next</span><span class="sr-only">Siguiente     </span></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -140,13 +140,13 @@
         var snapSlider = document.getElementById('slider-snap');
 
         noUiSlider.create(snapSlider, {
-            start: [400000, 20000000],
+            start: [400000, 200000000],
             snap: false,
             connect: true,
             step: 1,
             range: {
                 'min': 100000,
-                'max': 25000000
+                'max': 1000000000
             }
         });
         var snapValues = [
