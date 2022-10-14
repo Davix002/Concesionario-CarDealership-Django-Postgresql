@@ -6,7 +6,7 @@ from django.db.models import Q
 
 from datetime import datetime
 
-from .forms import UserForm, CompareForm
+from .forms import UserForm, CompareForm, Orden
 from .models import Car, Order
 
 # Create your views here.
@@ -153,7 +153,8 @@ def cars(request):
 def car_details(request, cid):
     car = Car.objects.get(pk=cid)
     context = {
-        'car': car
+        'car': car,
+        'form': Orden(),
     }
     return render(request, 'web/car_details.html', context)
 

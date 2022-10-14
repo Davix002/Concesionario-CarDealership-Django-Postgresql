@@ -29,3 +29,9 @@ class CompareForm(forms.Form):
             attrs={'class': 'selectpicker', 'data-live-search': "true"}
         )
     )
+
+class Orden(forms.Form):
+    nombre = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    address = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    identificacion = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+
