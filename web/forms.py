@@ -18,6 +18,7 @@ class CompareForm(forms.Form):
     car1 = forms.ModelChoiceField(
         Car.objects.all(),
         required=True,
+        label='Vehículo 1',
         widget=forms.Select(
             attrs={'class': 'selectpicker', 'data-live-search': "true"}
         )
@@ -25,6 +26,7 @@ class CompareForm(forms.Form):
     car2 = forms.ModelChoiceField(
         Car.objects.all(),
         required=True,
+        label='Vehículo 2',
         widget=forms.Select(
             attrs={'class': 'selectpicker', 'data-live-search': "true"}
         )
