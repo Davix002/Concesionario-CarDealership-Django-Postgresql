@@ -32,6 +32,6 @@ class CompareForm(forms.Form):
 
 class Orden(forms.Form):
     nombre = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    address = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    address = forms.CharField(label='direccion',widget=forms.TextInput(attrs={'class': 'form-control'}))
     identificacion = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
 
