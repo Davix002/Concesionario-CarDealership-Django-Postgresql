@@ -1,13 +1,13 @@
 {% extends 'web/base.html' %}
 {% load staticfiles %}
-{% block title %}DriveZone{% endblock %}
+{% block title %}CarSold{% endblock %}
 {% block css %}
     <link href="{% static 'css/creative.min.css' %}" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block menu %}
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#newArrival">Lugar</a>
+            <a class="nav-link js-scroll-trigger" href="#newArrival">Ubicaciones</a>
         </li>
         <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services">Servicios</a>
@@ -46,8 +46,12 @@
                     <hr>
                 </div>
                 <div class="col-lg-8 mx-auto" >
+                    
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'web:cars' %}">Buscar vehiculos</a>
+                    
+                </div>
+                <div class="col-lg-8 mx-auto" style="height: 100%;">
                     <p class="text-faded mb-5" id="subtitulo">VENTA DE TODO TIPO DE VEHICULOS</p>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'web:cars' %}">Todos los vehiculos</a>
                 </div>
             </div>
         </div>
@@ -106,7 +110,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                    <h2 class="section-heading">A su servicio</h2>
                     <hr class="my-4">
                 </div>
             </div>
@@ -116,29 +120,29 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box mt-5 mx-auto">
                         <i class="fa fa-4x fa-balance-scale text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">Compare cars</h3>
-                        <p class="text-muted mb-0">Our website will allow you to compare between cars and let you decide the best car for you.</p>
+                        <h3 class="mb-3">Comparar vehículos</h3>
+                        <p class="text-muted mb-0">Nuestro sitio web le permitirá comparar entre los coches y le permitirá decidir el mejor coche para usted.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box mt-5 mx-auto">
                         <i class="fa fa-4x fa-clock-o text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">On time delivery</h3>
-                        <p class="text-muted mb-0">Once you order your dream car, we deliver it on the scheduled date. No compromises!</p>
+                        <h3 class="mb-3">Entrega a tiempo</h3>
+                        <p class="text-muted mb-0">Una vez que pides el coche de tus sueños, te lo entregamos en la fecha prevista. Sin compromisos!</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box mt-5 mx-auto">
                         <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">Always updated</h3>
-                        <p class="text-muted mb-0">We update our stocks and catalogue as new arrivals come in.</p>
+                        <h3 class="mb-3">Siempre actualizado</h3>
+                        <p class="text-muted mb-0">Actualizamos nuestras existencias y nuestro catálogo a medida que llegan las novedades.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box mt-5 mx-auto">
                         <i class="fa fa-4x fa-life-ring text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">Support</h3>
-                        <p class="text-muted mb-0">We provide support for your car, even after your car is delivered to you!</p>
+                        <h3 class="mb-3">Soporte</h3>
+                        <p class="text-muted mb-0">Le proporcionamos asistencia para su coche, incluso después de que se lo entreguemos!</p>
                     </div>
                 </div>
             </div>
@@ -147,8 +151,8 @@
 
     <section class="bg-dark text-white" id="cars">
         <div class="container text-center">
-            <h2 class="mb-4">Check out all the cars!</h2>
-            <a class="btn btn-light btn-xl sr-button" href="{% url 'web:cars' %}">Click here</a>
+            <h2 class="mb-4">Mira todos los coches!</h2>
+            <a class="btn btn-light btn-xl sr-button" href="{% url 'web:cars' %}">Click aquí</a>
         </div>
     </section>
 
@@ -156,7 +160,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <h2 class="section-heading">Pongámonos en contacto!</h2>
                     <hr class="my-4">
                     <p class="mb-5">¿Listo para comprarnos el próximo coche? ¡Estupendo! Llámenos 
                         o envíenos un correo electrónico y nos pondremos en contacto contigo lo antes posible.</p>

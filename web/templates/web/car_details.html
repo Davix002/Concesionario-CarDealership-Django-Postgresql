@@ -10,21 +10,21 @@
 {% block menu %}
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{% url 'web:cars' %}">Cars</a>
+            <a class="nav-link js-scroll-trigger" href="{% url 'web:cars' %}">Vehículos</a>
         </li>
         {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:dashboard' %}">Welcome, {{ user.last_name }}</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:dashboard' %}">Bienvenido, {{ user.last_name }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-t rigger" href="{% url 'web:logout' %}">Logout</a>
+                <a class="nav-link js-scroll-t rigger" href="{% url 'web:logout' %}">Salir</a>
             </li>
         {% else %}
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:login' %}">Login</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:login' %}">Iniciar sesión</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:register' %}">Register</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:register' %}">Registrarse</a>
             </li>
         {% endif %}
     </ul>
@@ -54,14 +54,14 @@
 
                 <div class="card card-outline-secondary my-4">
                     <div class="card-header">
-                        Specification
+                        Especificación
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tbody>
                             <tr>
                                 <td>
-                                    Car type
+                                    Marca
                                 </td>
                                 <td>
                                     {{ car.marca }}
@@ -109,7 +109,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Potencia máxima (PS)
+                                    Potencia máxima (HP)
                                 </td>
                                 <td>
                                     {{ car.potencia }}

@@ -1,7 +1,7 @@
 {% extends 'web/base_alt.html' %}
 {% load staticfiles %}
 {% load bootstrap4 %}
-{% block title %}Compare{% endblock %}
+{% block title %}Comparar{% endblock %}
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/css_style.default.css' %}" id="theme-stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-select.min.css' %}" id="theme-stylesheet">
@@ -12,27 +12,27 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
             <form class="form-inline my-2 my-lg-0" id="searchbar">
-                <input class="form-control ml-sm-2" type="text" name="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Search</button>
+                <input class="form-control ml-sm-2" type="text" name="search" placeholder="Buscar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Buscar</button>
             </form>
         </li>
         &nbsp;&nbsp;
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{% url 'web:cars' %}">Cars</a>
+            <a class="nav-link js-scroll-trigger" href="{% url 'web:cars' %}">Vehículos</a>
         </li>
         {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:dashboard' %}">Welcome, {{ user.last_name }}</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:dashboard' %}">Bienvenido, {{ user.last_name }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:logout' %}">Logout</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:logout' %}">Salir</a>
             </li>
         {% else %}
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:login' %}">Login</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:login' %}">Iniciar sesión</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'web:register' %}">Register</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'web:register' %}">Registrarse</a>
             </li>
         {% endif %}
     </ul>
@@ -43,13 +43,13 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-lg-9 order-2 order-lg-1">
-                    <h1>Compare cars</h1>
-                    <p class="lead text-muted">Specs of 2 cars, side by side</p>
+                    <h1>Comparar vehículos</h1>
+                    <p class="lead text-muted">Especificaciones de 2 coches, uno al lado del otro</p>
                 </div>
                 <div class="col-lg-3 text-right order-1 order-lg-2">
                     <ul class="breadcrumb justify-content-lg-end">
-                        <li class="breadcrumb-item"><a href="{% url 'web:index' %}">Home</a></li>
-                        <li class="breadcrumb-item active">compare</li>
+                        <li class="breadcrumb-item"><a href="{% url 'web:index' %}">Inicio</a></li>
+                        <li class="breadcrumb-item active">comparar</li>
                     </ul>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                         {% csrf_token %}
                         {% bootstrap_form form layout='horizontal'%}
                         {% buttons %}
-                            <button type="submit" class="btn btn-success" id="compareBtn">Compare</button>
+                            <button type="submit" class="btn btn-success" id="compareBtn">Comparar</button>
                         {% endbuttons %}
                     </form>
                 </div>

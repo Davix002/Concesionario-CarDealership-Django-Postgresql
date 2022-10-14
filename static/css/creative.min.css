@@ -41,15 +41,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* texto de subtitulos */
 .text-faded {
-    text-align: center;
+    /* text-align: center; */
     color: rgb(255, 255, 255);
-    background-color: rgba(5, 5, 5, 0.377);
-    
-}
-
-#subtitulo{
+    /* background-color: rgba(5, 5, 5, 0.377); */
     width:50%;
     margin:auto;
+    margin-top: 10%;
+    vertical-align:middle;
+    border-radius: 10px;
+    text-shadow: 0 0 0.2em #000, 0 0 0.2em #000,
+    0 0 0.2em #000;
+    /* text-shadow:
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15); */
 }
 
 #segundoTitulo{
@@ -210,7 +219,7 @@ header.masthead h1 {
 }
 
 header.masthead p {
-    font-weight: 300
+    font-weight: 300;
 }
 
 @media (min-width: 768px) {
