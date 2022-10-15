@@ -154,7 +154,7 @@ def car_details(request, cid):
     car = Car.objects.get(pk=cid)
     context = {
         'car': car,
-        'form': Orden(),
+        'form': Orden,
     }
     return render(request, 'web/car_details.html', context)
 
@@ -210,21 +210,33 @@ def compare(request):
             'car1_name': car1.marca + " " + car1.modelo,
             'car1_foto': car1.foto.url,
             'car1_precio': car1.precio,
+            'car1_anio':car1.anio,
+            'car1_combustible':car1.combustible,
             'car1_puertas': car1.puertas,
-            'car1_consumo': car1.consumo,
             'car1_transmision': car1.transmision,
             'car1_motor': car1.motor,
             'car1_potencia': car1.potencia,
+            'car1_tipo':car1.tipo,
+            'car1_consumo': car1.consumo,
+            'car1_estado':car1.estado,
+            'car1_kilometros':car1.kilometros,
+            'car1_pais':car1.pais,
 
             'car2_id': car2.id,
             'car2_name': car2.marca + " " + car2.modelo,
             'car2_foto': car2.foto.url,
             'car2_precio': car2.precio,
+            'car2_anio':car2.anio,
+            'car2_combustible':car2.combustible,
             'car2_puertas': car2.puertas,
-            'car2_consumo': car2.consumo,
             'car2_transmision': car2.transmision,
             'car2_motor': car2.motor,
             'car2_potencia': car2.potencia,
+            'car2_tipo':car2.tipo,
+            'car2_consumo': car2.consumo,
+            'car2_estado':car2.estado,
+            'car2_kilometros':car2.kilometros,
+            'car2_pais':car2.pais,
         }
 
         html = '''
@@ -252,13 +264,35 @@ def compare(request):
             </tr>
             <tr>
                 <td>
-                    Precio (in $)
+                    Precio ($)
                 </td>
                 <td>
                     {car1_precio}
                 </td>
                 <td>
                     {car2_precio}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Año
+                </td>
+                <td>
+                    {car1_anio}
+                </td>
+                <td>
+                    {car2_anio}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tipo de combustible
+                </td>
+                <td>
+                    {car1_combustible}
+                </td>
+                <td>
+                    {car2_combustible}
                 </td>
             </tr>
             <tr>
@@ -270,17 +304,6 @@ def compare(request):
                 </td>
                 <td>
                     {car2_puertas}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Consumo
-                </td>
-                <td>
-                    {car1_consumo}
-                </td>
-                <td>
-                    {car2_consumo}
                 </td>
             </tr>
             <tr>
@@ -304,7 +327,7 @@ def compare(request):
                 <td>
                     {car2_motor}
                 </td>
-            </tr>
+            </tr>       
             <tr>
                 <td>
                     Potencia máxima (PS)
@@ -314,6 +337,61 @@ def compare(request):
                 </td>
                 <td>
                     {car2_potencia}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tipo de vehículo
+                </td>
+                <td>
+                    {car1_tipo}
+                </td>
+                <td>
+                    {car2_tipo}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Consumo
+                </td>
+                <td>
+                    {car1_consumo}
+                </td>
+                <td>
+                    {car2_consumo}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Estado
+                </td>
+                <td>
+                    {car1_estado}
+                </td>
+                <td>
+                    {car2_estado}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Kilometros
+                </td>
+                <td>
+                    {car1_kilometros}
+                </td>
+                <td>
+                    {car2_kilometros}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    País
+                </td>
+                <td>
+                    {car1_pais}
+                </td>
+                <td>
+                    {car2_pais}
                 </td>
             </tr>
             </tbody>
