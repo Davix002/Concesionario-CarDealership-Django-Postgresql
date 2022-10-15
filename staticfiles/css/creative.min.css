@@ -135,12 +135,6 @@ img::-moz-selection {
     text-shadow: 0 1px 0 #cccccc, 0 1px 1px rgba(0, 0, 0), 0 0 5px rgba(0, 0, 0), 0 1px 3px rgba(0, 0, 0), 0 0px 5px rgba(0, 0, 0), 0 5px 10px rgba(0, 0, 0), 0 5px 10px rgba(0, 0, 0), 0 5px 20px rgba(0, 0, 0);
 }
 
-.img-fluid {
-    max-width: 100%;
-    width:30vw;
-    height: auto;
-} 
-
 @media (min-width: 992px) {
     #mainNav {
         border-color: transparent;

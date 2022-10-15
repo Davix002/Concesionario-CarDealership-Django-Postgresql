@@ -241,12 +241,12 @@ def compare(request):
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="w-25">
                 </td>
-                <td>
+                <td class="w-25 align-middle">
                     <img class="img-fluid" src="{car1_foto}" alt="">
                 </td>
-                <td>
+                <td class="w-25 align-middle">
                     <img class="img-fluid" src="{car2_foto}" alt="">
                 </td>
             </tr>
