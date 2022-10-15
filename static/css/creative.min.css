@@ -135,8 +135,9 @@ img::-moz-selection {
 }
 
 .img-fluid {
-    height: 50vh;
-    width:auto;
+    max-width: 100%;
+    width:30vw;
+    height: auto;
 } 
 
 @media (min-width: 992px) {
