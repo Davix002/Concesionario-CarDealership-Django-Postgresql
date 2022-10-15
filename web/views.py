@@ -215,6 +215,7 @@ def compare(request):
             'car1_transmision': car1.transmision,
             'car1_motor': car1.motor,
             'car1_potencia': car1.potencia,
+
             'car2_id': car2.id,
             'car2_name': car2.marca + " " + car2.modelo,
             'car2_foto': car2.foto.url,
