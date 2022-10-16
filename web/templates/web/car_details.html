@@ -50,9 +50,7 @@
                             Comprar
                         </button>
                         {% else %}
-                        <button type="button" class="btn btn-primary" id="loginBtn">
-                            <a class="js-scroll-trigger" href="{% url 'web:login' %}">Iniciar sesión</a>
-                        </button>
+                        <a class="btn btn-primary" href="{% url 'web:login' %}">Comprar</a>
                         {% endif %}
                     </div>
                 </div>

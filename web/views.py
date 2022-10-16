@@ -152,8 +152,7 @@ def cars(request):
 
 def car_details(request, cid):
     car = Car.objects.get(pk=cid)
-    print(request.user)
-    if request.user == 'AnonymousUser':
+    if str(request.user) == 'AnonymousUser':
         nombre = ''
         direccion = ''
         identificacion = ''
