@@ -2,12 +2,12 @@ from django.contrib.auth.models import User,AbstractUser
 from django.db import models
 
 class User(AbstractUser):
-    identificacion=models.CharField(max_length=100, null=True)
+    identificacion=models.CharField(max_length=100, blank=True)
     telefono=models.CharField(max_length=50, null=True)
     pais=models.CharField(max_length=50, null=True)
     departamento=models.CharField(max_length=50, null=True)
     ciudad=models.CharField(max_length=50, null=True)
-    direccion=models.CharField(max_length=100, null=True)
+    direccion=models.CharField(max_length=100, blank=True)
 
 # Create your models here.
 class Car(models.Model):
