@@ -152,9 +152,19 @@ def cars(request):
 
 def car_details(request, cid):
     car = Car.objects.get(pk=cid)
+    print(request.user)
+    if request.user == 'AnonymousUser':
+        nombre = ''
+        direccion = ''
+        identificacion = ''
+    else:
+        nombre = request.user.first_name + " " + request.user.last_name
+        direccion = request.user.direccion
+        identificacion = request.user.identificacion
+        
     context = {
         'car': car,
-        'form': Orden,
+        'form': Orden(nombre,direccion,identificacion),
     }
     return render(request, 'web/car_details.html', context)
 
@@ -164,20 +174,22 @@ def order_car(request, cid):
         return redirect('web:login')
     user = request.user
     car = Car.objects.get(pk=cid)
-
     if request.method == 'POST':
         try:
             address = request.POST['address']
+            nombre = request.POST['nombre']
+            identificacion = request.POST['identificacion']
             new = Order(
                 user=user,
                 car=car,
                 amount=car.precio,
-                address=address
+                address=address,
+                nombre=nombre,
+                identificacion=identificacion
             ).save()
-
-            return HttpResponse("Your order has been placed!")
+            return HttpResponse("Su pedido ha sido realizado")
         except Exception as e:
-            return HttpResponse("Uh Oh! Something's wrong! Report to the developer with the following error" +
+            return HttpResponse("¡Uh Oh! ¡Algo está mal! Informe al desarrollador del siguiente error" +
                                 e.__str__())
     return HttpResponseForbidden()
 

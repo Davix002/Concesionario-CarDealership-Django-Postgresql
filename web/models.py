@@ -1,6 +1,13 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,AbstractUser
 from django.db import models
 
+class User(AbstractUser):
+    identificacion=models.CharField(max_length=100, null=True)
+    telefono=models.CharField(max_length=50, null=True)
+    pais=models.CharField(max_length=50, null=True)
+    departamento=models.CharField(max_length=50, null=True)
+    ciudad=models.CharField(max_length=50, null=True)
+    direccion=models.CharField(max_length=100, null=True)
 
 # Create your models here.
 class Car(models.Model):
@@ -34,6 +41,8 @@ class Order(models.Model):
     address = models.TextField()
     approved_by = models.ForeignKey(User, on_delete=None, null=True, related_name='approved_by_user')
     is_delivered = models.BooleanField(default=False)
+    nombre=models.CharField(max_length=100, null=True)
+    identificacion=models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return self.user.first_name + ' ' + self.user.last_name + ' - ' + self.car.modelo

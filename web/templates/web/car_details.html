@@ -45,9 +45,15 @@
                         <h3 class="card-title">{{ car.modelo }}</h3>
                         <h4>$ {{ car.precio }}</h4>
                         <p class="card-text">{{ car.descripcion }}</p>
+                        {% if user.is_authenticated %}
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#order" id="orderBtn">
                             Comprar
                         </button>
+                        {% else %}
+                        <button type="button" class="btn btn-primary" id="loginBtn">
+                            <a class="js-scroll-trigger" href="{% url 'web:login' %}">Iniciar sesión</a>
+                        </button>
+                        {% endif %}
                     </div>
                 </div>
                 <!-- /.card -->
@@ -203,9 +209,9 @@
                 </div>
 
                 <!-- Modal footer -->
-                <div class="modal-footer">
+                <!-- <div class="modal-footer">
                    
-                </div>
+                </div> -->
 
             </div>
         </div>
