@@ -41,113 +41,126 @@
 </ul>
 {% endblock %}
 {% block body %}
-<div class="container mt-5">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th id="altNav"><span class="navbar-brand">CarSold</span></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>Factura # {{pedido.id}}</th>
-                <th>Emisor</th>
-                <th>Receptor</th>
-            </tr>
+<div class="pb-5">
+<div class="container mt-5 pb-5">
+  <table class="table-responsive">
+    <table class="table table-striped border border-secondary">
+      <thead>
           <tr>
-            <td>
-                <p>Fecha de la compra</p>
-                <p>{{pedido.order_time}}</p>
-            </td>
-            <td>
-                <p>Concesionario Carsold</p>
-                <p>Bogota</p>
-                <p>Zona Norte, Bogota, CP 110131, COL</p>
-            </td>
-
-            <td>
-                <p>{{pedido.nombre}}</p>
-                <p>{{usuario.pais}}</p>
-                <p>{{usuario.departamento}}</p>
-                <p>{{usuario.ciudad}}</p>
-                <p>{{pedido.address}}</p>  
-            </td>
+              <th colspan="4" id="altNav" class="border-top-0"><span class="navbar-brand">CarSold</span></th>
           </tr>
+      </thead>
+      <tbody>
           <tr>
-            <th>Cantidad</th>
-            <th>Descripción vehículo</th>
-            <th>Precio</th>
+              <th>Factura # {{pedido.id}}</th>
+              <th>Emisor</th>
+              <th colspan="2">Receptor</th>
           </tr>
         <tr>
-          <th scope="row">1</th>
-          <td class="p-1">
-            <table>
-                <tr>
-                  <td class="p-1">Marca</td>
-                  <td class="p-1">{{ vehiculo.marca }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Modelo</td>
-                  <td class="p-1">{{ vehiculo.modelo }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Año</td>
-                  <td class="p-1">{{ vehiculo.anio }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Tipo de combustible</td>
-                  <td class="p-1">{{ vehiculo.combustible }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Número de puertas</td>
-                  <td class="p-1">{{ vehiculo.puertas }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Tipo de transmisión</td>
-                  <td class="p-1">{{ vehiculo.transmision }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Motor (cc)</td>
-                  <td class="p-1">{{ vehiculo.motor }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Potencia máxima (HP)</td>
-                  <td class="p-1">{{ vehiculo.potencia }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Tipo de vehículo</td>
-                  <td class="p-1">{{ vehiculo.tipo }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Consumo</td>
-                  <td class="p-1">{{ vehiculo.consumo }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Estado</td>
-                  <td class="p-1">{{ vehiculo.estado }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">Kilometros</td>
-                  <td class="p-1">{{ vehiculo.kilometros }}</td>
-                </tr>
-                <tr>
-                  <td class="p-1">País</td>
-                  <td class="p-1">{{ vehiculo.pais }}</td>
-                </tr>
-            </table>
-            
+          <td>
+              <p>Fecha de la compra</p>
+              <p>{{pedido.order_time}}</p>
           </td>
-          <td class="precio">{{pedido.amount}}</td>
+          <td>
+              <p>Concesionario Carsold</p>
+              <p>Bogota</p>
+              <p>Zona Norte, Bogota, CP 110131, COL</p>
+          </td>
+          <th >
+              <p>Nombre: </p>
+              <p>País: </p>
+              <p>Departamento: </p>
+              <p>Ciudad: </p>
+              <p>Dirección: </p>
+          </th>
+          <td>
+            <p>{{pedido.nombre}}</p>
+            <p>{{usuario.pais}}</p>
+            <p>{{usuario.departamento}}</p>
+            <p>{{usuario.ciudad}}</p>
+            <p>{{pedido.address}}</p>
+          </td>
         </tr>
         <tr>
-            <td></td>
-            <th>Total:</th>
-            <td class="precio">{{pedido.amount}}</td>
+          <th>Cantidad</th>
+          <th>Descripción vehículo</th>
+          <td></td>
+          <th>Precio</th>
         </tr>
-        </tbody>
-      </table>
+      <tr>
+        <th scope="row">1</th>
+        <td class="p-1">
+          <table>
+              <tr>
+                <td class="p-1">Marca</td>
+                <td class="p-1">{{ vehiculo.marca }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Modelo</td>
+                <td class="p-1">{{ vehiculo.modelo }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Año</td>
+                <td class="p-1">{{ vehiculo.anio }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Tipo de combustible</td>
+                <td class="p-1">{{ vehiculo.combustible }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Número de puertas</td>
+                <td class="p-1">{{ vehiculo.puertas }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Tipo de transmisión</td>
+                <td class="p-1">{{ vehiculo.transmision }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Motor (cc)</td>
+                <td class="p-1">{{ vehiculo.motor }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Potencia máxima (HP)</td>
+                <td class="p-1">{{ vehiculo.potencia }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Tipo de vehículo</td>
+                <td class="p-1">{{ vehiculo.tipo }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Consumo</td>
+                <td class="p-1">{{ vehiculo.consumo }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Estado</td>
+                <td class="p-1">{{ vehiculo.estado }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">Kilometros</td>
+                <td class="p-1">{{ vehiculo.kilometros }}</td>
+              </tr>
+              <tr>
+                <td class="p-1">País</td>
+                <td class="p-1">{{ vehiculo.pais }}</td>
+              </tr>
+          </table>
+          
+        </td>
+        <td></td>
+        <td class="precio">{{pedido.amount}}</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <th>Total:</th>
+          <td class="precio">{{pedido.amount}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </table>
+    
 </div>
-
+</div>
 {% endblock %}
 {% block scripts %}
 <script>
