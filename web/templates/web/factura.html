@@ -58,8 +58,10 @@
           </tr>
         <tr>
           <td>
-              <p>Fecha de la compra</p>
+              <p class="font-weight-bold">Fecha de la compra</p>
               <p>{{pedido.order_time}}</p>
+              <p class="font-weight-bold">Id de Usuario</p>
+              <p>{{usuario.id}}</p>
           </td>
           <td>
               <p>Concesionario Carsold</p>
@@ -75,9 +77,9 @@
           </th>
           <td>
             <p>{{pedido.nombre}}</p>
-            <p>{{usuario.pais}}</p>
-            <p>{{usuario.departamento}}</p>
-            <p>{{usuario.ciudad}}</p>
+            <p>{{pedido.pais}}</p>
+            <p>{{pedido.departamento}}</p>
+            <p>{{pedido.ciudad}}</p>
             <p>{{pedido.address}}</p>
           </td>
         </tr>

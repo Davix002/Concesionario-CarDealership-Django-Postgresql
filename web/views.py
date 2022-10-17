@@ -154,16 +154,22 @@ def car_details(request, cid):
     car = Car.objects.get(pk=cid)
     if str(request.user) == 'AnonymousUser':
         nombre = ''
+        pais = ''
+        departamento = ''
+        ciudad = ''
         direccion = ''
         identificacion = ''
     else:
         nombre = request.user.first_name + " " + request.user.last_name
+        pais = request.user.pais
+        departamento = request.user.departamento
+        ciudad = request.user.ciudad
         direccion = request.user.direccion
         identificacion = request.user.identificacion
         
     context = {
         'car': car,
-        'form': Orden(nombre,direccion,identificacion),
+        'form': Orden(nombre,pais,departamento,ciudad,direccion,identificacion),
     }
     return render(request, 'web/car_details.html', context)
 
@@ -175,13 +181,19 @@ def order_car(request, cid):
     car = Car.objects.get(pk=cid)
     if request.method == 'POST':
         try:
-            address = request.POST['address']
             nombre = request.POST['nombre']
+            pais = request.POST['pais']
+            departamento = request.POST['departamento']
+            ciudad = request.POST['ciudad']
+            address = request.POST['address']
             identificacion = request.POST['identificacion']
             new = Order(
                 user=user,
                 car=car,
                 amount=car.precio,
+                pais=pais,
+                departamento=departamento,
+                ciudad=ciudad,
                 address=address,
                 nombre=nombre,
                 identificacion=identificacion

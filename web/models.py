@@ -2,12 +2,12 @@ from django.contrib.auth.models import User,AbstractUser
 from django.db import models
 
 class User(AbstractUser):
-    identificacion=models.CharField(max_length=100, blank=True)
+    identificacion=models.CharField(max_length=100, blank=True, default='')
     telefono=models.CharField(max_length=50, null=True)
-    pais=models.CharField(max_length=50, null=True)
-    departamento=models.CharField(max_length=50, null=True)
-    ciudad=models.CharField(max_length=50, null=True)
-    direccion=models.CharField(max_length=100, blank=True)
+    pais=models.CharField(max_length=50, blank=True, default='')
+    departamento=models.CharField(max_length=50, blank=True, default='')
+    ciudad=models.CharField(max_length=50, blank=True, default='')
+    direccion=models.CharField(max_length=100, blank=True, default='')
 
 # Create your models here.
 class Car(models.Model):
@@ -43,6 +43,9 @@ class Order(models.Model):
     is_delivered = models.BooleanField(default=False)
     nombre=models.CharField(max_length=100, null=True)
     identificacion=models.CharField(max_length=100, null=True)
+    pais=models.CharField(max_length=50, null=True)
+    departamento=models.CharField(max_length=50, null=True)
+    ciudad=models.CharField(max_length=50, null=True)
 
     def __str__(self):
         return self.user.first_name + ' ' + self.user.last_name + ' - ' + self.car.modelo
