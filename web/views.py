@@ -1,13 +1,13 @@
 from django.contrib.auth import authenticate, login, logout
 from django.core import serializers
-from django.http import HttpResponse, HttpResponseForbidden
+from django.http import HttpResponse, HttpResponseForbidden,JsonResponse
 from django.shortcuts import render, redirect
 from django.db.models import Q
 
 from datetime import datetime
 
 from .forms import UserForm, CompareForm, Orden
-from .models import Car, Order
+from .models import Car, Order, User
 
 # Create your views here.
 def index(request):
@@ -186,11 +186,23 @@ def order_car(request, cid):
                 nombre=nombre,
                 identificacion=identificacion
             ).save()
-            return HttpResponse("Su pedido ha sido realizado")
+            p_id = Order.objects.filter(car_id=cid,user_id=user).last().id
+            return HttpResponse(p_id)
         except Exception as e:
-            return HttpResponse("¡Uh Oh! ¡Algo está mal! Informe al desarrollador del siguiente error" +
+            return HttpResponse("¡Uh Oh! ¡Algo está mal! Informe al desarrollador del siguiente error: " +
                                 e.__str__())
     return HttpResponseForbidden()
+
+def compra(request,cid):
+    pedido = Order.objects.get(pk=cid)
+    car = Car.objects.get(id=pedido.car_id)
+    usuario = User.objects.get(id=pedido.user_id)
+    context = {
+        'pedido':pedido,
+        'vehiculo':car,
+        'usuario':usuario
+    }
+    return render(request,'web/factura.html',context)
 
 def dashboard(request):
     if not request.user.is_authenticated:

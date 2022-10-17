@@ -1,0 +1,162 @@
+{% extends 'web/base_alt.html' %}
+{% load staticfiles %}
+{% block title %}Pedido No: {{pedido.id}}{% endblock %} 
+{% block css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/css_style.default.css' %}"
+  id="theme-stylesheet"/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/bootstrap-datepicker.min.css' %}"
+  id="theme-stylesheet"/>
+{% endblock %}
+{% block menu %}
+<ul class="navbar-nav ml-auto align-items-center">
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="{% url 'web:cars' %}">
+        Vehículos</a>
+  </li>
+  {% if user.is_authenticated %}
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="{% url 'web:dashboard' %}">
+      Bienvenido, {{ user.last_name }}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-t rigger" href="{% url 'web:logout' %}">
+        Salir</a>
+  </li>
+  {% else %}
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="{% url 'web:login' %}">
+        Iniciar sesión</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="{% url 'web:register' %}">
+        Registrarse</a>
+  </li>
+  {% endif %}
+</ul>
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th id="altNav"><span class="navbar-brand">CarSold</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Factura # {{pedido.id}}</th>
+                <th>Emisor</th>
+                <th>Receptor</th>
+            </tr>
+          <tr>
+            <td>
+                <p>Fecha de la compra</p>
+                <p>{{pedido.order_time}}</p>
+            </td>
+            <td>
+                <p>Concesionario Carsold</p>
+                <p>Bogota</p>
+                <p>Zona Norte, Bogota, CP 110131, COL</p>
+            </td>
+
+            <td>
+                <p>{{pedido.nombre}}</p>
+                <p>{{usuario.pais}}</p>
+                <p>{{usuario.departamento}}</p>
+                <p>{{usuario.ciudad}}</p>
+                <p>{{pedido.address}}</p>  
+            </td>
+          </tr>
+          <tr>
+            <th>Cantidad</th>
+            <th>Descripción vehículo</th>
+            <th>Precio</th>
+          </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td class="p-1">
+            <table>
+                <tr>
+                  <td class="p-1">Marca</td>
+                  <td class="p-1">{{ vehiculo.marca }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Modelo</td>
+                  <td class="p-1">{{ vehiculo.modelo }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Año</td>
+                  <td class="p-1">{{ vehiculo.anio }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Tipo de combustible</td>
+                  <td class="p-1">{{ vehiculo.combustible }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Número de puertas</td>
+                  <td class="p-1">{{ vehiculo.puertas }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Tipo de transmisión</td>
+                  <td class="p-1">{{ vehiculo.transmision }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Motor (cc)</td>
+                  <td class="p-1">{{ vehiculo.motor }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Potencia máxima (HP)</td>
+                  <td class="p-1">{{ vehiculo.potencia }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Tipo de vehículo</td>
+                  <td class="p-1">{{ vehiculo.tipo }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Consumo</td>
+                  <td class="p-1">{{ vehiculo.consumo }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Estado</td>
+                  <td class="p-1">{{ vehiculo.estado }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">Kilometros</td>
+                  <td class="p-1">{{ vehiculo.kilometros }}</td>
+                </tr>
+                <tr>
+                  <td class="p-1">País</td>
+                  <td class="p-1">{{ vehiculo.pais }}</td>
+                </tr>
+            </table>
+            
+          </td>
+          <td class="precio">{{pedido.amount}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <th>Total:</th>
+            <td class="precio">{{pedido.amount}}</td>
+        </tr>
+        </tbody>
+      </table>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+    precio_ant=$(".precio").html()
+    formateado=new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 2,
+  }).format(precio_ant)
+  $(".precio").html(formateado)
+</script>
+{% endblock %}
