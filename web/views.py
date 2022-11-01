@@ -28,7 +28,7 @@ def login_user(request):
             else:
                 return render(request, 'web/login.html', {'error_message': 'Your account has not been activated!'})
         else:
-            return render(request, 'web/login.html', {'error_message': 'Invalid login'})
+            return render(request, 'web/login.html', {'error_message': 'login inválido'})
     return render(request, 'web/login.html')
 
 
